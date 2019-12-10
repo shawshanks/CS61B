@@ -31,6 +31,7 @@ public class NBody{
 
 
     public static void main(String[] args) {
+
         /** Get data */
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
@@ -47,8 +48,10 @@ public class NBody{
         /* set initial time */
         double time = 0;
 
+
         /* Set up a loop to loop until this time variable reaches (and includes) the T */
         while (time <= T) {
+
             double[] xForces = new double[planetArray.length];
             double[] yForces = new double[planetArray.length];
 
