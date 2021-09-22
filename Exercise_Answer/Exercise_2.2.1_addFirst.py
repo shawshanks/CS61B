@@ -23,5 +23,27 @@ Printing out L.first should display the number 1 even without reassigning L in t
 Hint: If we know that the reference, L, cannot be changed, what are our options for making the changes in addFirst visible to main? We know that, 
 due to Golden Rule of Equals, there’s no way to change what L points to from the addFirst method. Given these constraints, 
 try drawing a box-and-pointer diagram that shows what it should look like before and after calling addFirst
+
+Demonstrate process:
+
+1. L----------> 15->10 
+                    ^
+                   /
+2. new ------->  15          # Create a new node that its first = L.first, rest = L.rest. The new node replace the orignial L
+                 ^
+                / 
+
+3. L --------->5            # Then change the L.first = new_value, L.rest = new_node
 """
+
+class IntList:
+    def __init__(self, first, rest):
+        self.first = first
+        self.rest = rest
+    
+    def addFirst(self, x):
+        new_node = IntList(self.first, self.rest)
+        self.first = x
+        self.rest = new_node
+ 
 
