@@ -46,4 +46,7 @@ class IntList:
         self.first = x
         self.rest = new_node
  
-
+	
+L= IntNode(15, None)
+L.addFirst(10)
+L.addFirst(5)
